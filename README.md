@@ -1,2 +1,2 @@
 # initia
-web3_project_initia
+Jennie Status Check 
