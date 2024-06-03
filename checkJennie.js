@@ -91,12 +91,10 @@ async function checkTaskProgress(address){
         }
       };
     const  response =await axios.request(config);
-    //console.log(response.data);
     let currentTasks=[];
     for(const task of response.data){
         currentTasks.push(task.task_id)
     }
-    console.log(currentTasks)
     const fullRange = ['0', '1', '2', '3', '4', '5'];
   
     const missingNumbers = fullRange.filter(num => !currentTasks.includes(num));
