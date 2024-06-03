@@ -1,5 +1,5 @@
 const axios = require('axios');
-const config = require('../config/runner.json');
+const config = require('./config/runner.json');
 const readlineSync = require('readline-sync');
 const crypto = require('crypto');
 const { createLogger, transports, format } = require('winston');
@@ -53,11 +53,11 @@ const sleep = (seconds) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
 };
 
-function randomPause() {
-    const minSeconds = Math.ceil(config.minInterval);
-    const maxSeconds = Math.floor(config.maxInterval);
-    return Math.floor(Math.random() * (maxSeconds - minSeconds + 1)) + minSeconds;
-}
+//function randomPause() {
+//    const minSeconds = Math.ceil(config.minInterval);
+//    const maxSeconds = Math.floor(config.maxInterval);
+//    return Math.floor(Math.random() * (maxSeconds - minSeconds + 1)) + minSeconds;
+//}
 
 async function sendRequest(url, urlConfig, timeout = 10000, maxRetries = 3) {
     let retries = 0;

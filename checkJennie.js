@@ -10,7 +10,7 @@ const{
   MsgWithdrawDelegatorReward,
   MsgAddValidator,
 } =require('@initia/initia.js');
-const { sleep } = require("../../utils/utils.js");
+//const { sleep } = require("./utils/utils.js");
 const axios = require('axios');
 
 async function main(){
