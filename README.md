@@ -1,10 +1,22 @@
 # initia
 Jennie Status Check 
 
-###第一步 npm install 安装依赖
+## Installation 
+### install the requirements packages
+### 1. npm install  
+### create the initia account
+### 2. node createInitia.js
+#### modify the nubmerOfWallets to create the number of wallets
+### 3. open account.csv and use the phaseword or privatekey to restore the account in web broswer and do faucet task. 
+### check the Jennie status
+### 4. node checkJennie 
 
-###第二步 node createInitia.js 创建账号
 
-###第三步 使用account.csv 里面的账号依次完成任务
-
-###第四步 node checkJennie 查看每个Jennie的状态
+## Function in work:
+### check the food store 
+## Function to do:
+### week one tasks (need to do faucet manually)
+### week two tasks (overdue)
+### week three tasks (On-going)
+### week four tasks (--)
+### daily xp activities (On-going)
