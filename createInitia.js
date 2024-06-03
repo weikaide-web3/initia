@@ -19,7 +19,7 @@ function generateKeyFromMnemonic(mnemonic, account = 0, index = 0) {
 }
 
 function saveToCSV(filename, wallets) {
-  const csvContent = `Mnemonic,Address,PrivateKey\n${wallets.map(wallet => `${wallet.mnemonic},${wallet.address},${wallet.privateKey}`).join('\n')}\n`;
+  const csvContent = `${wallets.map(wallet => `${wallet.mnemonic},${wallet.address},${wallet.privateKey}`).join('\n')}\n`;
   fs.writeFileSync(path.join(__dirname, filename), csvContent, 'utf8');
   console.log(`${filename} 文件已保存`);
 }
