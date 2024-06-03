@@ -1,33 +1,26 @@
 const fs = require('fs');
-const{
-  LCDClient,
-  MnemonicKey,
-  MsgExecute,
-  MsgSend,
-  Wallet,
-  bcs,
-  MsgDelegate,
-  MsgWithdrawDelegatorReward,
-  MsgAddValidator,
-} =require('@initia/initia.js');
-//const { sleep } = require("./utils/utils.js");
+const{bcs} =require('@initia/initia.js');
 const axios = require('axios');
 
 async function main(){
 var account;
+
 try {
   account = fs.readFileSync('account.csv', 'utf8');
 } catch (err) {
     console.error(err);
 }
+
 const lines = account.split('\n');
+lines.pop();
+
 let index = 0;
 for (let line of lines) {
     const address = line.split(',')[1];
     index++;
-    //console.log("index:",index,"address is:",address);
-    //await checkTaskProgress(address);
-    //await checkJennie(address)
+    console.log(index)
+    await checkTaskProgress(address);
+    await checkJennie(address);
     await checkFoodStore(address,index);
   }
 }
@@ -69,11 +62,8 @@ try{
 
     }    
 }catch(error){
-    console.log("index:",index,"address is:",address,",获取食物清单失败⚡️");
+    console.log("index:",index,"address is:",address,", 获取食物清单失败⚡️");
 }
-
-
-
 }
 
 async function checkTaskProgress(address){
@@ -109,7 +99,6 @@ async function checkTaskProgress(address){
     console.log(currentTasks)
     const fullRange = ['0', '1', '2', '3', '4', '5'];
   
-    // 使用 filter 方法找出 fullRange 中 task 不包含的数字
     const missingNumbers = fullRange.filter(num => !currentTasks.includes(num));
     
     if (missingNumbers ==[]){ 
@@ -152,11 +141,10 @@ async function checkJennie(address){
         data : data
     };
     response= await axios.request(config);
-      //console.log(response.data.data);
     if(response.data.data.split(',')[0].split(':')[1] == "true"){
         console.log("address is:",address,",Jennie minted✅");
     }else{       
-        console.log("address is:",address,",Jennie NOT minted❌");
+        console.log("address is:",address,", Jennie NOT minted❌");
         if(response.data.data.split(':')[4].split(',')[0] == "true"){
           console.log("task 1 minted ✅");
         }else{
