@@ -10,6 +10,7 @@ Installation：
 function done:
 
     1. check the food store
+    2. check Jennie is live or not and claim the claim the airdop food
 
 function todo:
 
@@ -18,4 +19,3 @@ function todo:
     3. week two tasks (overdue)
     4. week three tasks (On-going)
     5. week four tasks (Not release yet)
-    6. check Jennie is live or not and claim the claim the airdop food
