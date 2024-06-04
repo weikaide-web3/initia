@@ -11,6 +11,7 @@ function done:
 
     1. check the food store
     2. check Jennie is live or not and claim the claim the airdop food
+    3 foodDraw
 
 function todo:
 
